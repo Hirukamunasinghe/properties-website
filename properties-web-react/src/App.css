@@ -2,13 +2,17 @@
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
 }
 
 .navbar{
+  position: fixed;
   display: flex;
   justify-content: space-between;
   background-color: #CDD6D8;
   height: 60px;
+  width: 100%;
+  z-index: 9999;
 }
 
 .navbarTitle{
@@ -123,6 +127,227 @@
   cursor: pointer;
 }
 
+/* home section */
+.home-div{
+  display: flex;
+  justify-content: center;
+  background-color: beige;
+}
+
+
+
+.famImage{
+  height: 700px;
+  width: 1200px;
+}
+
+.headingOne{
+  position: absolute;
+  top: 150px;
+  font-size: 2.3rem;
+  color: #436548;
+  font-weight: bold;
+}
+
+.prop-heading{
+  text-align: center;
+  font-size: 2.5rem;
+  padding-top: 50px;
+  color: #436548;
+  font-weight: bold;
+}
+
+.card-div{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+  text-align: center;
+  padding-top: 60px;
+  row-gap: 50px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.card{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  width: 400px;
+  height: 500px;
+  border: 1px solid black;
+  background-color: beige;
+  cursor: pointer;
+}
+
+.card:hover{
+  box-shadow: 0 3px 8px 0 black;
+  transform: scale(1.02) !important;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1;
+}
+
+/* Apply blur effect to other cards when one card is hovered */
+
+.cardImg{
+  height: 320px;
+  width: 400px;
+}
+
+.textCont{
+  display: grid;
+  row-gap: 3px;
+}
+
+.cardbtn{
+  background-color: black;
+  color: white;
+  height: 50px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: -36px;
+}
+
+.cardbtn:hover{
+  background-color: white;
+  color: black;
+  height: 50px;
+  transition: 0.3s ease-in-out;
+}
+
+
+
+/* Modal */
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #888;
+  max-width: 100%;
+}
+
+.modal-image{
+  height: 300px;
+  width: 400px;
+}
+
+.selected-card{
+  display: grid;
+  row-gap: 20px;
+  place-items: center;
+  text-align: center;
+}
+
+.closebtn{
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  width: 90px;
+  height: 30px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+
+} 
+
+.closebtn:hover{
+  background-color: black;
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+
+.favorite-cards{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+  text-align: center;
+  padding-top: 60px;
+  row-gap: 50px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.favheading{
+  text-align: center;
+  font-size: 2.5rem;
+  padding-top: 50px;
+  color: #436548;
+  font-weight: bold;
+}
+
+.rembtn{
+  color: red;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.rembtn:hover{
+  background-color: white;
+}
+
+/* advanced search */
+
+.advsearchbtn{
+  margin-left: 25px;
+  cursor: pointer;
+  border: 1px solid green;
+  height: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.advanced-search-dialog{
+  border: 1px solid black;
+  display: grid;
+  row-gap: 20px;
+  background-color: black;
+  color: white;
+}
+
+.adv-searchbtn{
+  cursor: pointer;
+  height: 30px;
+}
+
+input{
+  margin-left: 20px;
+}
+
+select{
+  margin-left: 20px;
+}
+
+.clearfavbtn{
+  height: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+  background-color: white;
+  color: red;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.clearfavbtn:hover{
+  background-color: red;
+  color: white;
+}
+
+
+
 /* responsive navbar */
 @media (max-width:1200px) {
   .toggle-button {
@@ -171,8 +396,8 @@
       display: flex;  /* Show nav-li when active */
       flex-direction: column;
       align-items: center;
+      z-index: 1;
     }
-
 
     .dropbtn{
       display: none;
@@ -201,4 +426,26 @@
       padding: 10px 0px;
     }  
 
+    .famImage{
+      height: 700px;
+      width: 100%;
+    }
+
+    .card-div{
+      grid-template-columns: 1fr;
+    }
+
+    .favorite-cards{
+      grid-template-columns: 1fr;
+    }
+
+    .advanced-search-dialog{
+      margin-top: 60px;
+      margin-left: -500px;
+      width: 300px;
+      z-index: 9999;
+    }
+
+
 }
+
