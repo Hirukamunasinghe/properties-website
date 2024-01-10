@@ -20,6 +20,8 @@ const Navbar = ({ setFilteredData,setAdvancedSearchCriteria }) => {
     setIsDropdownActive(!isDropdownActive);
   };
 
+
+
   // handle search function
   const handleSearch = (e) => {
     const searchTerm = e.target.value.toLowerCase();
@@ -156,10 +158,10 @@ const Navbar = ({ setFilteredData,setAdvancedSearchCriteria }) => {
               Buy <FontAwesomeIcon className="car" icon={faCaretDown} />
             </a>
             <div className="dropdown-content">
-              <a class="drop-content-link" href="#cards-section">
+              <a class="drop-content-link" href="#" onClick={scrollToCardsSection}>
                 Property for Sale
               </a>
-              <a class="drop-content-link" href="#cards-section">
+              <a class="drop-content-link" href="#" onClick={scrollToCardsSection}>
                 Homes for Sale
               </a>
               <a class="drop-content-link" href="#">
@@ -175,10 +177,10 @@ const Navbar = ({ setFilteredData,setAdvancedSearchCriteria }) => {
               Rent <FontAwesomeIcon className="car" icon={faCaretDown} />
             </a>
             <div class="dropdown-content">
-              <a class="drop-content-link" href="#cards-section">
+              <a class="drop-content-link" href="#" onClick={scrollToCardsSection}>
                 Property to Rent
               </a>
-              <a class="drop-content-link" href="#">
+              <a class="drop-content-link" href="#" onClick={scrollToCardsSection}>
                 Student Property to Rent
               </a>
               <a class="drop-content-link" href="#">
@@ -187,10 +189,10 @@ const Navbar = ({ setFilteredData,setAdvancedSearchCriteria }) => {
             </div>
           </div>
           <li className={`nav-li ${isActive ? "active" : ""}`}>
-            <a href="#cards-section">House Prices </a>
+            <a href="#" onClick={scrollToCardsSection}>House Prices </a>
           </li>
           <li className={`nav-li ${isActive ? "active" : ""}`}>
-            <a href="">Our Services</a>
+            <a href="#/services">Our Services</a>
           </li>
         </ul>
       </div>

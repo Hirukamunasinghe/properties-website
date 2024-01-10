@@ -9,6 +9,7 @@ import propfour from "./propfour.jpg";
 import propfive from "./propfive.jpg";
 import propsix from "./propsix.jpg";
 
+
 const Home = ({ filteredData, advancedSearchCriteria }) => {
 
   // displayed data use state set to an empty list
