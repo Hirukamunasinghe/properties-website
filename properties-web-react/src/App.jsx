@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import "./App.css";
 
 
+// App function
 function App() {
   const [filteredData, setFilteredData] = useState(null);
   const [advancedSearchCriteria, setAdvancedSearchCriteria] = useState(null);
