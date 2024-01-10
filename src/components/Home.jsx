@@ -176,7 +176,7 @@ const Home = ({ filteredData, advancedSearchCriteria }) => {
         <h1 className="headingOne">Find Home, Find Comfort</h1>
       </div>
       <section id="cards-section">
-        <h1 className="prop-heading">PROPERTIESS</h1>
+        <h1 className="prop-heading">PROPERTIES</h1>
         <div className="card-div">
         {displayedData.map((property) => (
           // accessing the property features through the propertyData list
