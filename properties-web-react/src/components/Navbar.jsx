@@ -1,34 +1,32 @@
 import React from "react";
 // importing router from react-router-dom for navigations
 import { useState } from "react";
+// font awesome icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 
 const Navbar = ({ setFilteredData,setAdvancedSearchCriteria }) => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [title, setTitle] = useState("");
+
   const [isActive, setIsActive] = useState(false);
-  
   const [isSearchActive, setIsSearchActive] = useState(false);
   const [isDropdownActive, setIsDropdownActive] = useState(false);
 
-
-
+  // handle toggle function
   const handleToggle = () => {
     setIsActive(!isActive);
     setIsSearchActive(!isSearchActive);
     setIsDropdownActive(!isDropdownActive);
   };
 
+  // handle search function
   const handleSearch = (e) => {
     const searchTerm = e.target.value.toLowerCase();
     setFilteredData(searchTerm); // Pass the search term to the parent component
   };
 
-
-
+  // scroll to the card section - function
   const scrollToCardsSection = () => {
     const cardsSection = document.querySelector("#cards-section");
     if (cardsSection) {
@@ -44,11 +42,13 @@ const Navbar = ({ setFilteredData,setAdvancedSearchCriteria }) => {
   const [minBedrooms, setMinBedrooms] = useState("");
   const [maxBedrooms, setMaxBedrooms] = useState("");
 
+  // toggle handling function
   const handleToggleAdvancedSearch = () => {
     setShowAdvancedSearch(!showAdvancedSearch);
   };
 
   const advhandleSearch = () => {
+    // creating the search criteria dictionary
     const searchCriteria = {
       type,
       minPrice,
@@ -56,30 +56,37 @@ const Navbar = ({ setFilteredData,setAdvancedSearchCriteria }) => {
       minBedrooms,
       maxBedrooms,
     };
+
     setAdvancedSearchCriteria(searchCriteria);
     setShowAdvancedSearch(false);
   };
 
+  // handling type change function
   const handleTypeChange = (e) => {
     setType(e.target.value);
   };
 
+  // handling tprice change function
   const handleMinPriceChange = (e) => {
     setMinPrice(e.target.value);
   };
 
+  // handling maximum price change function
   const handleMaxPriceChange = (e) => {
     setMaxPrice(e.target.value);
   };
 
+  // handling minimum bedrooms change function
   const handleMinBedroomsChange = (e) => {
     setMinBedrooms(e.target.value);
   };
 
+  // handling maximum bedrooms change function
   const handleMaxBedroomsChange = (e) => {
     setMaxBedrooms(e.target.value);
   };
 
+  // clear function to clear all data
   const handleClear = () => {
     setType("Any");
     setMinPrice("");
@@ -94,7 +101,9 @@ const Navbar = ({ setFilteredData,setAdvancedSearchCriteria }) => {
   return (
     <nav className={`navbar ${isActive ? "active" : ""}`}>
       <div className="textContent">
+        {/* project title */}
         <h1 className="navbarTitle">Propz7</h1>
+        {/* search bar div */}
         <div className={`searchDiv ${isSearchActive ? "active" : ""}`}>
           <input
             className="searchInput"
@@ -105,6 +114,7 @@ const Navbar = ({ setFilteredData,setAdvancedSearchCriteria }) => {
           <FontAwesomeIcon  className="fas" icon={faSearch} onClick={scrollToCardsSection} />
           <button className="advsearchbtn" onClick={handleToggleAdvancedSearch} >Advanced Search
           </button>
+          {/* advanced search dialog box */}
           {showAdvancedSearch && (
         <div className="advanced-search-dialog">
           <h2>Advanced Search</h2>
@@ -149,7 +159,7 @@ const Navbar = ({ setFilteredData,setAdvancedSearchCriteria }) => {
               <a class="drop-content-link" href="#cards-section">
                 Property for Sale
               </a>
-              <a class="drop-content-link" href="#">
+              <a class="drop-content-link" href="#cards-section">
                 Homes for Sale
               </a>
               <a class="drop-content-link" href="#">
@@ -184,6 +194,7 @@ const Navbar = ({ setFilteredData,setAdvancedSearchCriteria }) => {
           </li>
         </ul>
       </div>
+      {/* toggle button */}
       <a href="#" className="toggle-button" onClick={handleToggle}>
         <span class="toggle-bar"></span>
         <span class="toggle-bar"></span>

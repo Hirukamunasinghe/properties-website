@@ -14,6 +14,7 @@ const CardModal = ({ selectedCard, closeModal }) => {
             <h4>Bedrooms: {selectedCard.bedrooms}</h4>
             <h4>Location: {selectedCard.location}</h4>
             <h4>Post Code: {selectedCard.postcode}</h4>
+            <h4>Description: {selectedCard.description}</h4>
             <button onClick={closeModal} className="closebtn">
               Close
             </button>

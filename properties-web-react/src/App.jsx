@@ -1,4 +1,6 @@
+// import modules
 import React, { useState } from "react";
+// import modules
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
@@ -20,6 +22,7 @@ function App() {
         <Routes>
           <Route
             path="/"
+            // passing the props or aruments into the Home component
             element={<Home filteredData={filteredData} advancedSearchCriteria={advancedSearchCriteria} />}
           />
         </Routes>

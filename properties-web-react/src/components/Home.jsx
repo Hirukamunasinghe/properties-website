@@ -11,22 +11,29 @@ import propsix from "./propsix.jpg";
 
 const Home = ({ filteredData, advancedSearchCriteria }) => {
 
+  // displayed data use state set to an empty list
   const [displayedData, setDisplayedData] = useState([]);
 
+  // selected card use state
   const [selectedCard, setSelectedCard] = useState(null);
 
+  // favorites use state
   const [favorites, setFavorites] = useState([]);
 
+  // clear favorites use state
   const [showClearFavorites, setShowClearFavorites] = useState(false);
 
+  // handle card click function
   const handleCardClick = (cardDetails) => {
     setSelectedCard(cardDetails);
   };
 
+  // close model function
   const closeModal = () => {
     setSelectedCard(null);
   };
 
+  // add to favorites function
   const addToFavorites = (card) => {
     const isAlreadyAdded = favorites.some((favCard) => favCard.id === card.id);
     if (!isAlreadyAdded) {
@@ -35,16 +42,19 @@ const Home = ({ filteredData, advancedSearchCriteria }) => {
     }
   };
 
+  // remove from favorites function
   const removeFromFavorites = (id) => {
     const updatedFavorites = favorites.filter((favCard) => favCard.id !== id);
     setFavorites(updatedFavorites);
   };
 
+  // clear favorites function
   const clearFavorites = () => {
     setFavorites([]);
     setShowClearFavorites(false); // Hide the clear favorites button after clearing favorites
   };
 
+  // use effect to get filtered data and display them
   useEffect(() => {
     let filtered = propertyData;
 
@@ -58,6 +68,7 @@ const Home = ({ filteredData, advancedSearchCriteria }) => {
       const { type, minPrice, maxPrice, minBedrooms, maxBedrooms } = advancedSearchCriteria;
 
       filtered = filtered.filter((data) => {
+        // checking the input conditions
         let isValid = true;
 
         if (type !== "Any" && data.type.toLowerCase() !== type.toLowerCase()) {
@@ -88,66 +99,73 @@ const Home = ({ filteredData, advancedSearchCriteria }) => {
   }, [filteredData, advancedSearchCriteria]);
 
 
+  // accessing the property data without creating a seperate json file
   const propertyData = [
     {
       id: "prop1",
       image: propone,
       type: "House",
-      price: "$750000",
+      price: "$450000",
       tenure: "Freehold",
       bedrooms: 3,
       location: "York",
-      postcode: "10250",
+      postcode: "Y01SF",
+      description: <p>Beautiful House in York.<br/> Spacious and perfect for a family.</p>
     },
     {
       id: 2,
       image: proptwo,
       type: "Apartment",
-      price: "$320,000",
+      price: "$700,000",
       tenure: "Freehold",
-      bedrooms: "4",
+      bedrooms: "30",
       location: "New York",
-      postcode: "223090",
+      postcode: "10013",
+      description: <p>Modern Apartment located in New York. <br/>Ideal for urban living with great amenities nearby.</p>
     },
     {
       id: 3,
       image: propthree,
       type: "House",
-      price: "$150,000",
+      price: "$550,000",
       tenure: "Freehold",
       bedrooms: "4",
       location: "London",
-      postcode: "11250",
+      postcode: "NW10 3SG",
+      description: <p>Modern House located in London with plenty of spacing.<br /> Car parking available.</p>
     },
     {
       id: 4,
       image: propfour,
       type: "Villa",
-      price: "$190,000",
+      price: "$500,000",
       tenure: "Freehold",
       bedrooms: "4",
       location: "Paris",
-      postcode: "10250",
+      postcode: "70123",
+      description: <p>Luxurious Villa located in Paris. <br/>Experience elegance and comfort in a serene setting. <br/>Swimming pool available.</p>
     },
     {
       id: 5,
       image: propfive,
       type: "House",
-      price: "$200,000",
+      price: "$450,000",
       tenure: "Freehold",
       bedrooms: "4",
       location: "Toronto",
-      postcode: "14250",
+      postcode: "43964",
+      description: <p>Spacious house located in New York. <br/>Swimming pool availble. <br/>Suitable for family and friends.</p>
     },
     {
       id: 6,
       image: propsix,
       type: "House",
-      price: "$100,000",
+      price: "$300,000",
       tenure: "Freehold",
-      bedrooms: "4",
+      bedrooms: "3",
       location: "Manchester",
-      postcode: "10250",
+      postcode: "M1 1AQ",
+      description: <p>Beautiful house in Manchester with 3 bedrooms. <br/>Consists of a beautiful garden with spacing .</p>
     },
   ];
 
@@ -161,6 +179,7 @@ const Home = ({ filteredData, advancedSearchCriteria }) => {
         <h1 className="prop-heading">PROPERTIES</h1>
         <div className="card-div">
         {displayedData.map((property) => (
+          // accessing the property features through the propertyData list
           <div className="card" key={property.id} onClick={() => handleCardClick(property)}>
             <div className="imageCont">
               <img className="cardImg" src={property.image} alt={`Property ${property.id}`} />

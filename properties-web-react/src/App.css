@@ -5,6 +5,7 @@
   scroll-behavior: smooth;
 }
 
+/* navbar styling */
 .navbar{
   position: fixed;
   display: flex;
@@ -46,6 +47,7 @@
   height: 40px;
   margin-top: 10px;
   width: 400px;
+  margin-left: -160px
 }
 
 .fas{
@@ -157,6 +159,7 @@
   font-weight: bold;
 }
 
+/* cards section styling */
 .card-div{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -184,8 +187,6 @@
   transition: transform 0.3s ease-in-out;
   z-index: 1;
 }
-
-/* Apply blur effect to other cards when one card is hovered */
 
 .cardImg{
   height: 320px;
@@ -302,7 +303,6 @@
 }
 
 /* advanced search */
-
 .advsearchbtn{
   margin-left: 25px;
   cursor: pointer;
@@ -351,7 +351,7 @@ select{
   color: white;
 }
 
-/* footer */
+/* footer styling */
 footer{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -470,11 +470,17 @@ footer{
       z-index: 9999;
     }
 
+    .searchInput{
+      margin-left: -110px
+    }
+
+    /* responsive footer */
     footer{
       grid-template-columns: 1fr;
       text-align: center;
       row-gap: 10px;
     }
 
-}
 
+
+}
