@@ -192,7 +192,7 @@ const Navbar = ({ setFilteredData,setAdvancedSearchCriteria }) => {
             <a href="#" onClick={scrollToCardsSection}>House Prices </a>
           </li>
           <li className={`nav-li ${isActive ? "active" : ""}`}>
-            <a href="#/services">Our Services</a>
+            <a href="#/">Our Services</a>
           </li>
         </ul>
       </div>
