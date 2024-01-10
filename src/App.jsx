@@ -3,7 +3,7 @@ import React, { useState } from "react";
 // import modules
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Home from "./Home";
+import Home from "./components/Home";
 import Footer from "./components/Footer";
 import "./App.css";
 

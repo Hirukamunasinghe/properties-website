@@ -1,13 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import CardModal from "./components/CardModal"
-import image from "./assets/famimg.jpg";
-import propone from "./assets/propone.jpg";
-import proptwo from "./assets/proptwo.jpg";
-import propthree from "./assets/propthree.jpeg";
-import propfour from "./assets/propfour.jpg";
-import propfive from "./assets/propfive.jpg";
-import propsix from "./assets/propsix.jpg";
+import CardModal from "./CardModal";
+import image from "./famimg.jpg";
+import propone from "./propone.jpg";
+import proptwo from "./proptwo.jpg";
+import propthree from "./propthree.jpeg";
+import propfour from "./propfour.jpg";
+import propfive from "./propfive.jpg";
+import propsix from "./propsix.jpg";
 
 const Home = ({ filteredData, advancedSearchCriteria }) => {
 
