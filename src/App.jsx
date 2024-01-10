@@ -20,13 +20,7 @@ function App() {
           setFilteredData={setFilteredData}
           setAdvancedSearchCriteria={setAdvancedSearchCriteria}
         />
-        <Routes>
-          <Route
-            path="/"
-            // passing the props or aruments into the Home component
-            element={<Home filteredData={filteredData} advancedSearchCriteria={advancedSearchCriteria} />}
-          />
-        </Routes>
+        <Home filteredData={filteredData} advancedSearchCriteria={advancedSearchCriteria} />
         <Footer />
       </div>
     </Router>
