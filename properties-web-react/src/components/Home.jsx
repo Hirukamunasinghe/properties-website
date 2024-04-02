@@ -55,7 +55,7 @@ const Home = ({ filteredData, advancedSearchCriteria }) => {
   };
 
   // use effect to get filtered data and display them
-  useEffect(() => {
+  useEffect(() => {``
     let filtered = propertyData;
 
     if (filteredData) {

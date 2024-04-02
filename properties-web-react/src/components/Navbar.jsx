@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
-
 const Navbar = ({ setFilteredData,setAdvancedSearchCriteria }) => {
 
   const [isActive, setIsActive] = useState(false);
