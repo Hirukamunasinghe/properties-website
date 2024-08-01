@@ -392,6 +392,26 @@ footer{
 
 /* responsive navbar */
 @media (max-width:1200px) {
+
+  .card {
+    width: 350px;
+    height: auto;
+  }
+
+  .cardImg {
+    width: 350px;
+    height: auto;
+  }
+
+  .modal-content {
+    width: 350px;
+  }
+
+  .modal-image {
+    width: 350px;
+    height: auto;
+  }
+
   .toggle-button {
       display: flex;
       cursor: pointer;
@@ -497,6 +517,8 @@ footer{
     .searchInput{
       margin-left: -110px
     }
+
+
 
     /* responsive footer */
     footer{
