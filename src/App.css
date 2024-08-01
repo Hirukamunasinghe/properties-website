@@ -405,11 +405,16 @@ footer{
 
   .modal-content {
     width: 350px;
+    height: 750px;
   }
 
   .modal-image {
     width: 350px;
     height: auto;
+  }
+
+  .cardbtn{
+    margin-bottom: -50px;
   }
 
   .toggle-button {
