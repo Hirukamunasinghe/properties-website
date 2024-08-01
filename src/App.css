@@ -5,6 +5,21 @@
   scroll-behavior: smooth;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+
+.home-div {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
 /* navbar styling */
 .navbar{
   position: fixed;
@@ -141,6 +156,10 @@
 .famImage{
   height: 700px;
   width: 1200px;
+  background-size: cover;
+  background-position: center;
+  display: block;
+  margin: 0 auto; /* Center the image on larger screens */
 }
 
 .headingOne{
@@ -449,11 +468,16 @@ footer{
       padding: 10px 0px;
     }  
 
+
     .famImage{
-      height: 700px;
       width: 100%;
-      right: 0;
+      height: 500px; 
     }
+
+    .headingOne{
+      text-align: center;
+    }
+
 
     .card-div{
       grid-template-columns: 1fr;
